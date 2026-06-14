@@ -6,11 +6,13 @@ private _subCategory = player getVariable ["RZ_selectedSubCategory", ""];
 
 //Checks if those are not empty and then creates a hint only for all players in range of 50 meters.
 if (_category != "" && _subCategory != "") then {
-
-    private _message = format ["%1: %2", _category, _subCategory];
+	
+	if (_subCategory == "Watch & Shoot") then {_subCategory = "Watch &amp; Shoot"};
+	
+    private _message = parseText (format ["%1 said: <br/> <t size='2.0'>%2 %3</t>", name player, _category, _subCategory]);
 
     private _nearPlayers = allPlayers select {
-        alive _x && {_x distance player <= 50}
+        alive _x && {_x distance player <= 25}
     };
 
     [_message] remoteExec ["hint", _nearPlayers];
