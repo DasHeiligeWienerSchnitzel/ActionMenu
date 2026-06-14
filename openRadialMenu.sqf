@@ -51,17 +51,19 @@ uiNamespace setVariable ["RZ_Radial_Display", _display];
 //Always centers the mouse at initialization
 setMousePosition [0.5, 0.5];
 
-//Checks if the T key gets lifted up
+
+//Checks if the P key gets lifted up
 _display displayAddEventHandler ["KeyUp", {
     params ["_display", "_key", "_shift", "_ctrl", "_alt"];
 
-    if (_key == 20) then {
+    if (_key == 25) then {
         [] execVM "confirmRadialSelection.sqf";
         true
     } else {
         false
     };
 }];
+
 
 //Checks if the display gets unloaded
 _display displayAddEventHandler ["Unload", {
