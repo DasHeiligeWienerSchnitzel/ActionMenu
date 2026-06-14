@@ -2,7 +2,7 @@
 
 ## Action Menu v1.0
 ### Changelog
-For  @louie118 .
+For  Lou.
 #### Added
 - While holding the button **T** the action menu will appear.
 - It enables to select certain commands to be broadcast too all player in a 50m radius after lifting the **T** button again.
